@@ -6,10 +6,34 @@ public class EJERCICIO5 {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        double resultado = Double.parseDouble(entrada.nextLine());
+        System.out.print("Ingresa un numero:");
+        int numero = entrada.nextInt();
 
-        System.out.println(Math.pow(10,1.5899));
-        System.out.println(Math.floor(resultado));
-        System.out.println(Math.log10(38));
+        int numDigitos = contarDigitos(numero);
+
+        int suma = sumarDigitosElevados(numero, numDigitos);
+
+        if (suma == numero) {
+            System.out.println(numero + " es un numero Amstrong.");
+        } else {
+            System.out.println(numero + " no es un numero Amstrong.");
+        }
+    }
+
+    private static int contarDigitos(int num) {
+        return(int) Math.floor(Math.log10(num) + 1);
+    }
+
+    private static int sumarDigitosElevados(int num, int potencia) {
+        int suma = 0;
+        int originalNum = num;
+
+        while (num != 0) {
+            int digito = num % 10;
+            suma += Math.pow(digito, potencia);
+            num /= 10;
+        }
+
+        return suma;
     }
 }

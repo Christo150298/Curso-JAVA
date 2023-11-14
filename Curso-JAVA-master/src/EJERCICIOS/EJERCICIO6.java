@@ -4,12 +4,23 @@ public class EJERCICIO6 {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        double metros, pulgadas;
 
-        System.out.println("Ingrese el valor en metros: ");
-        metros = entrada.nextDouble();
-        entrada.nextLine();
-        pulgadas=metros/0.0254;
-        System.out.println("El resultado son " + pulgadas + " pulgadas.");
+        System.out.println("Metros\tPulgadas");
+        System.out.println("----------------");
+
+        for(int pulgadas = 1; pulgadas <= 144; pulgadas++){
+
+            double metros = convertirPulgadasAMetros(pulgadas);
+            System.out.printf("%.2f\t%d\n", metros, pulgadas);
+
+            if (pulgadas % 12 == 0) {
+                System.out.println();
+            }
+        }
+    }
+
+    private static double convertirPulgadasAMetros(int pulgadas) {
+        return pulgadas * 0.0254;
+
     }
 }
