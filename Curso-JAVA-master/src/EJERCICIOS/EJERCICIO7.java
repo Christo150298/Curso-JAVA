@@ -1,5 +1,6 @@
 package EJERCICIOS;
 import java.util.Scanner;
+
 public class EJERCICIO7 {
 
     public static int[] candyCalculator(int cupones) {
