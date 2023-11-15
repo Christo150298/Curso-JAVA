@@ -1,5 +1,6 @@
 package EJERCICIOS;
 import java.util.Scanner;
+
 public class EJERCICIO7 {
 
     public static int[] candyCalculator(int cupones) {
@@ -16,7 +17,7 @@ public class EJERCICIO7 {
         chicles = cuponesRestantes / CUPONES_POR_CHICLE;
         cuponesRestantes = cuponesRestantes % CUPONES_POR_CHICLE;
 
-        int[] resultados = { barrasDeCaramelo, chicles, cuponesRestantes };
+        int[] resultados = {barrasDeCaramelo, chicles, cuponesRestantes};
         return resultados;
     }
 
