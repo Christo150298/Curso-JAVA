@@ -1,4 +1,4 @@
-package EJERCICIOS.EJERCICIO10;
+package EJERCICIOS.EJERCICIO_10;
 
 public class persona {
 
