@@ -3,7 +3,7 @@ package EJERCICIOS.EJERCICIO_15;
 public class Main {
     public static void main(String[] args) {
         // Crear instancia de EmpleadoTiempoCompleto
-        EmpleadoTiempoCompleto empleadoCompleto = new EmpleadoTiempoCompleto("Juan", 30, 50000, "Desarrollador");
+        EmpleadoTiempoCompleto empleadoCompleto = new EmpleadoTiempoCompleto("Christopher", 25, 25000, "Desarrollador");
 
         // Mostrar información detallada
         System.out.println("Empleado a tiempo completo:");
@@ -14,7 +14,7 @@ public class Main {
         System.out.println();
 
         // Crear instancia de EmpleadoTiempoParcial
-        EmpleadoTiempoParcial empleadoParcial = new EmpleadoTiempoParcial("Maria", 25, 10, 15);
+        EmpleadoTiempoParcial empleadoParcial = new EmpleadoTiempoParcial("Sara", 25, 12.5, 15);
 
         // Mostrar información detallada
         System.out.println("Empleado a tiempo parcial:");

@@ -10,7 +10,8 @@ public class EmpleadoTiempoCompleto extends Empleado {
     }
 
     public double calcularSalarioTotal() {
-        return getSalario() * 1.10;
+        double bono = 1.10;
+        return getSalario() * bono;
     }
 
     public String getCargo() {
