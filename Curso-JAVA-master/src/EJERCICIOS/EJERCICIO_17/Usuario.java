@@ -3,15 +3,14 @@ package EJERCICIOS.EJERCICIO_17;
 class Usuario implements Autenticable{
 
     public String nameUser;
-    private String idUser;
-    private int passwordUser;
+    private String passwordUser;
 
-    public Usuario(String nameUser) {
+    public Usuario(String nameUser, String passwordUser) {
         this.nameUser = nameUser;
+        this.passwordUser = passwordUser;
     }
     @Override
     public boolean autenticar() {
-        System.out.println("Autenticacion de usuario");
-        return true;
+        return nameUser.equals(nameUser);
     }
 }

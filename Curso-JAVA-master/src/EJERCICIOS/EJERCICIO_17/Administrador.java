@@ -3,11 +3,11 @@ package EJERCICIOS.EJERCICIO_17;
 class Administrador implements Autenticable {
 
     public String nameAdmin;
-    private String idAdmin;
-    private int passwordAdmin;
+    private String passwordAdmin;
 
-    public Administrador(String nameAdmin) {
+    public Administrador(String nameAdmin, String passwordAdmin) {
         this.nameAdmin = nameAdmin;
+        this.passwordAdmin = nameAdmin;
     }
     @Override
     public boolean autenticar() {

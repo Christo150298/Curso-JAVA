@@ -3,8 +3,8 @@ package EJERCICIOS.EJERCICIO_17;
 public class Main {
     public static void main(String[] args) {
 
-        Usuario usuario = new Usuario("Christopher");
-        Administrador administrador = new Administrador("Gonzalo");
+        Usuario usuario = new Usuario("Christopher", "Christo123456");
+        Administrador administrador = new Administrador("Gonzalo","Admin12345");
 
         if (usuario.autenticar()) {
             System.out.println("Bienvenido " + usuario.nameUser);
