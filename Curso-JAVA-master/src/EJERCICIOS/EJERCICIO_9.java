@@ -1,7 +1,7 @@
 package EJERCICIOS;
 import java.util.Scanner;
 
-public class EJERCICIO9 {
+public class EJERCICIO_9 {
 
     public static void main(String[] args) {
 

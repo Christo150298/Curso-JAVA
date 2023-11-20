@@ -1,18 +1,27 @@
 package EJERCICIOS.EJERCICIO_19;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Ingresar numero para calcular Logaritmo Neperiano: ");
-        double numero1 = entrada.nextDouble();
-        System.out.println("Ingresar numero para calcular raiz cuadrada: ");
-        double numero2 = entrada.nextDouble();
+        System.out.println("Ingrese un numero entero de mas de una cifra: ");
+        int numero = entrada.nextInt();
 
-        CalculosNumericos calculosNumericos = new CalculosNumericos(numero1,numero2);
+        if (esCapicua(numero)) {
+            System.out.println("El numero " + numero + " es capicua.");
+        } else {
+            System.out.println("El numero " + numero + " no es capicua.");
+        }
+    }
 
-        System.out.println("El logaritmo neperiano de " + numero1 + " es " + calculosNumericos.calcularLogaritmoNeperiano());
-        System.out.println("La raiz cuadrada de " + numero2 + " es " + + calculosNumericos.calcularRaizcuadrada());
+    private static boolean esCapicua(int numero) {
+
+        String numeroStr = String.valueOf(numero);
+
+        String numeroInvertidoStr = new StringBuilder(numeroStr).reverse().toString();
+
+        return numeroStr.equals(numeroInvertidoStr);
     }
 }

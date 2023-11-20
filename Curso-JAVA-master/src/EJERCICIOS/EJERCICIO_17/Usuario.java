@@ -3,7 +3,7 @@ package EJERCICIOS.EJERCICIO_17;
 class Usuario implements Autenticable{
 
     public String nameUser;
-    private String passwordUser;
+    public String passwordUser;
 
     public Usuario(String nameUser, String passwordUser) {
         this.nameUser = nameUser;
@@ -11,6 +11,6 @@ class Usuario implements Autenticable{
     }
     @Override
     public boolean autenticar() {
-        return nameUser.equals(nameUser);
+        return true;
     }
 }

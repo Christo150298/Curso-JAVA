@@ -1,6 +1,6 @@
 package EJERCICIOS;
 
-public class EJERCICIO8 {
+public class EJERCICIO_8 {
     public static void main(String[] args) {
 
         int contador = 0;
