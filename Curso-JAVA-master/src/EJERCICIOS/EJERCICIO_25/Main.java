@@ -12,6 +12,7 @@ public class Main {
         String lenguaje = entrada.nextLine();
         System.out.println("Ingrese el tamaño del equipo (2 o 3): ");
         int tamanoEquipo = entrada.nextInt();
+        entrada.nextLine();
 
         EquipoProgramacion equipoProgramacion = new EquipoProgramacion(nombreEquipo, universidad, lenguaje, tamanoEquipo);
 

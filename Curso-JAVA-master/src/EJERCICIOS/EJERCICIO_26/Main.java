@@ -1,36 +1,85 @@
 package EJERCICIOS.EJERCICIO_26;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        ArrayList<String> listaNombres = new ArrayList<>();
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Ingrese un nombre para añadir a la lista: ");
-        String nombre1 = entrada.nextLine();
-        System.out.println("Ingresar otro nombre para añadir a la lista: ");
-        String nombre2 = entrada.nextLine();
+        int opcion = 0;
 
-        List<String> listNombres = new ArrayList<>();
-        listNombres.add("Kylian");
-        listNombres.add("Erika");
-        listNombres.add(nombre1);
-        listNombres.add(nombre2);
-        System.out.println(listNombres);
+        do {
+            System.out.println("-----------------------------------");
+            System.out.println("Menú: ");
+            System.out.println("1. Agregar un nombre a la lista.");
+            System.out.println("2. Eliminar  un nombre a la lista.");
+            System.out.println("3. Imprimir la lista de nombres.");
+            System.out.println("4. Buscar un nombre en la lista.");
+            System.out.println("5. Salir del programa.");
+            System.out.println("Seleccione una opción: ");
 
-        System.out.println("Ingresa el nombrie que quieres buscar: ");
-        String buscarNombre = entrada.nextLine();
-        int posicion = listNombres.indexOf(buscarNombre);
-        if ( posicion >= 0) {
-            System.out.println("El elemento " + buscarNombre + " está en la lista en la posición " + posicion);
+            try {
+                opcion = Integer.parseInt(entrada.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, introduzca un número válido.");
+                continue;
+            }
+
+            switch (opcion) {
+                case 1:
+                    agregarNombre(listaNombres, entrada);
+                    break;
+                case 2:
+                    eliminarNombre(listaNombres, entrada);
+                    break;
+                case 3:
+                    imprimirLista(listaNombres);
+                    break;
+                case 4:
+                    buscarNombre(listaNombres, entrada);
+                    break;
+                case 5:
+                    System.out.println("!Nos Vemos¡");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, elija una opción del 1 al 5.");
+            }
+        } while (opcion != 5);
+    }
+
+    private static void agregarNombre(ArrayList<String> listaNombres, Scanner entrada) {
+        System.out.println("Ingrese el nombre a agregar: ");
+        String nombre = entrada.nextLine();
+        listaNombres.add(nombre);
+        System.out.println("Nombre agregado con éxito.");
+    }
+    private static void eliminarNombre(ArrayList<String> listaNombres, Scanner entrada) {
+        System.out.println("Ingrese el nombre a eliminar: ");
+        String nombre = entrada.nextLine();
+        if (listaNombres.remove(nombre)) {
+            System.out.println("Nombre eliminado con éxito.");
         } else {
-            System.out.println("El elemento " + buscarNombre + " NO está en la lista.");
+            System.out.println("El nombre no se encontró en la lista.");
         }
-
-        System.out.println("Ingresa el nombre que quieres borrar de la lista: ");
-        String nombreBorrar = entrada.nextLine();
-        listNombres.remove(nombreBorrar);
-        System.out.println(listNombres);
+    }
+    private static void imprimirLista(ArrayList<String> listaNombres) {
+        if (listaNombres.isEmpty()) {
+            System.out.println("La lista de nombres está vacía.");
+        } else {
+            System.out.println("Lista de nombre: ");
+            for (String nombre : listaNombres) {
+                System.out.println(nombre);
+            }
+        }
+    }
+    private static void buscarNombre(ArrayList<String> listaNombres, Scanner entrada) {
+        System.out.println("Ingrese el nombre a buscar: ");
+        String nombre = entrada.nextLine();
+        if (listaNombres.contains(nombre)) {
+            System.out.print("El nombre " + nombre + " está en la lista.");
+        } else {
+            System.out.print("El nombre " + nombre + " no está en la lista.");
+        }
     }
 }
