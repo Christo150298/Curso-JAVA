@@ -19,6 +19,7 @@ public class Main {
             System.out.println("5. Salir del programa.");
             System.out.println("Seleccione una opción: ");
 
+
             try {
                 opcion = Integer.parseInt(entrada.nextLine());
             } catch (NumberFormatException e) {
@@ -46,6 +47,8 @@ public class Main {
                     System.out.println("Opción no válida. Por favor, elija una opción del 1 al 5.");
             }
         } while (opcion != 5);
+
+        entrada.close();
     }
 
     private static void agregarNombre(ArrayList<String> listaNombres, Scanner entrada) {

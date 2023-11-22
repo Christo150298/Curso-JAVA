@@ -1,6 +1,6 @@
 package EJERCICIOS.EJERCICIO_27;
 
-public class Persona implements Comparable<Persona> {
+public class Persona {
     private String nombre;
     private int edad;
 
@@ -18,9 +18,5 @@ public class Persona implements Comparable<Persona> {
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-    @Override
-    public int compareTo(Persona otraPersona) {
-        return Integer.compare(this.edad, otraPersona.edad);
     }
 }
