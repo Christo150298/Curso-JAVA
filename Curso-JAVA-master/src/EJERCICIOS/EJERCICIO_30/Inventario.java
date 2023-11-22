@@ -1,43 +1,50 @@
 package EJERCICIOS.EJERCICIO_30;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Inventario {
+    private HashMap<String, Integer> inventario;
+
+    public Inventario() {
+        this.inventario = new HashMap<>();
+    }
+
+    public void agregarProducto(String codigo, int cantidad) {
+        inventario.put(codigo, cantidad);
+    }
+
+    public void actualizarExistencias(String codigo, int nuevaCantidad) {
+        inventario.put(codigo, nuevaCantidad);
+    }
+
+    public int obtenerCantidadExistencias(String codigo) {
+        return inventario.getOrDefault(codigo, 0);
+    }
+
+    public void mostrarInventario() {
+        for (String codigo : inventario.keySet()) {
+            System.out.println("Código: " + codigo + ", Cantidad: " + inventario.get(codigo));
+        }
+    }
+
     public static void main(String[] args) {
 
-        HashMap<String,Integer> inventario = new HashMap<String,Integer>();
+        Inventario inventario = new Inventario();
 
-        System.out.println("Lista de productos: ");
-
-        inventario.put("Camisetas", 20);
-        inventario.put("Pantalones", 20);
-        inventario.put("Chaquetas", 10);
-        inventario.put("Calcetines", 30);
-        inventario.put("Accesorios", 40);
-        inventario.put("Accesorios", 25);
-
-        productoRepetido(inventario);
-        System.out.println(inventario);
+        System.out.println("Inventario: ");
+        inventario.agregarProducto("001", 10);
+        inventario.agregarProducto("002", 20);
+        inventario.agregarProducto("003", 60);
+        inventario.agregarProducto("004", 80);
+        inventario.agregarProducto("005", 18);
+        inventario.mostrarInventario();
 
         System.out.println();
+        inventario.actualizarExistencias("001", 25);
+        System.out.println("Inventario Actualizado: ");
+        inventario.mostrarInventario();
 
-        actualizarProductos(inventario);
-        System.out.println(inventario);
-    }
-    private static void actualizarProductos(HashMap<String, Integer> inventario) {
-        System.out.println("Lista de productos actualizados: ");
-        inventario.put("Camisetas", 80);
-        inventario.replace("Chaquetas", 50);
-        inventario.put("Pantalones", 60);
-        inventario.put("Calcetines", 100);
-        inventario.put("Accesorios", 120);
-    }
-
-    private static void productoRepetido(HashMap<String, Integer> inventario) {
-        if (inventario.containsKey("Accesorios")) {
-            if (inventario.containsValue(25)) {
-                inventario.remove("Accesorios",25);
-            }
-        }
+        System.out.println();
+        int cantidadExistencias = inventario.obtenerCantidadExistencias("002");
+        System.out.println("Cantidad de existencias para el producto 002: " + cantidadExistencias);
     }
 }
